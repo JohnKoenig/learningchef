@@ -1,4 +1,13 @@
 Do these commands:
+On the node:
+sudo vi /etc/ssh/sshd_config
+PasswordAuthentication yes
+sudo passwd user
+sudo service sshd reload
+
+knife bootstrap 1.2.3.4 -N ec2-1-2-3-4.us-west-1.compute.amazonaws.com -x user -P password --sudo
+
+
 chef generate cookbook cookbooks/xyz
 knife cookbook upload xyz
 knife node run_list add ec2-1-2-3-4.us-west-1.compute.amazonaws.com 'recipe[xyz]'
